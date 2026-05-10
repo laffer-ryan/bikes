@@ -7,8 +7,7 @@ SELECT
     MONTH(TO_TIMESTAMP(STARTED_AT)) AS month_started_at,
     {{ get_season('STARTED_AT') }} AS STATION_OF_YEAR
 
-FROM {{ source('demo', 'bike') }}
-
+FROM {{ ref('stg_bike') }}
 )
 
 
